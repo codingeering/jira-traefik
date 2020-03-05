@@ -11,10 +11,10 @@ A Docker Compose configuration to run [Jira](https://www.atlassian.com/software/
 ### Optional
 Jira might encounter some permission issues for folders /var/atlassian/jira and /opt/atlassian/jira since the user "daemon" is the one running the jira instances and does not have permission to access these folders. In that case do the following:
 
-4. chown -R daemon:daemon /var/atlassian/jira
-5. chown -R daemon:daemon /opt/atlassian/jira
-6. Kill containers with `docker-compose down`
-7. Restart with `docker-compose up -d`
+4. Run `chown -R daemon:daemon /var/atlassian/jira`
+5. Run `chown -R daemon:daemon /opt/atlassian/jira`
+6. Run `docker-compose down`
+7. Run `docker-compose up -d`
 
 ## Installation
 
