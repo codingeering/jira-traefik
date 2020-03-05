@@ -8,6 +8,14 @@ A Docker Compose configuration to run [Jira](https://www.atlassian.com/software/
 2. Modify the variables inside the .env file
 3. Run `docker-compose up -d`.
 
+### Optional
+Jira might encounter some permission issues for folders /var/atlassian/jira and /opt/atlassian/jira since the user "daemon" is the one running the jira instances and does not have permission to access these folders. In that case do the following:
+
+4. chown -R daemon:daemon /var/atlassian/jira
+5. chown -R daemon:daemon /opt/atlassian/jira
+6. Kill containers with `docker-compose down`
+7. Restart with `docker-compose up -d`
+
 ## Installation
 
 When setting up for the first time, you'll need to configure Jira. When asked what kind of environment you're setting up, specify it's a production environment. When asked to set up the database, specify you're using your own database and fill in the following details:
@@ -15,7 +23,7 @@ When setting up for the first time, you'll need to configure Jira. When asked wh
 - Hostname: `postgres`
 - Port: `5432`
 - Database: `jira`
-- Username: `jira`
+- Username: the user you set in the `.env`
 - Password: the password you set in `.env`
 - Schema: `public`
 
