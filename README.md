@@ -20,9 +20,9 @@ Jira might encounter some permission issues for folders `/var/atlassian/jira` an
 ## Installation
 
 When setting up for the first time, you'll need to configure Jira. When asked what kind of environment you're setting up, specify it's a production environment. When asked to set up the database, specify you're using your own database and fill in the following details:
-- Database type: `PostgreSQL`
-- Hostname: `postgres`
-- Port: `5432`
+- Database type: `MySQL`
+- Hostname: `db`
+- Port: `3306`
 - Database: `jira`
 - Username: the user you set in the `.env`
 - Password: the password you set in `.env`
