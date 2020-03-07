@@ -27,7 +27,7 @@ services:
       - "traefik.docker.network=proxy"
     restart: unless-stopped
  
-  postgres:
+  db:
     image: mysql:5.6
     environment:
       - MYSQL_USER=${DB_USER}
